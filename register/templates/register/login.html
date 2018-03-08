@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Signin</title>
+    <script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a title="Facebook" class="socialaccount_provider facebook" href="/accounts/facebook/login/?process=login">Facebook</a></li>
+      <li><a title="Google" class="socialaccount_provider google" href="/accounts/google/login/?process=login">Google</a></li>
+    </ul>
+
+
+
+
+
+
+
+    <script id="allauth-facebook-settings" type="application/json">
+    {"appId": "364235564056120", "version": "v2.4", "locale": "en_US", "initParams": {"appId": "364235564056120", "version": "v2.4"}, "loginOptions": {"scope": ""}, "loginByTokenUrl": "http://localhost:8000/accounts/facebook/login/token/", "cancelUrl": "http://localhost:8000/accounts/social/login/cancelled/", "logoutUrl": "http://localhost:8000/accounts/logout/", "loginUrl": "http://localhost:8000/accounts/facebook/login/", "errorUrl": "http://localhost:8000/accounts/social/login/error/", "csrfToken": "DfbMOidI8idK3f10doQ3oKek9IntJfxPVfywZlCbcewhn8YYrMWq33f2raX44SUP"}
+    </script>
+
+<script type="text/javascript" src="/static/facebook/js/fbconnect.js"></script>
+
+  </body>
+</html>
