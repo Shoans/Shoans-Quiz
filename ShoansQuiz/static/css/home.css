@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block head %}
-    <title>Base</title>
-    {% endblock %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
-    <!-- UIkit JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-<style>
-    /**********************************
+/**********************************
 Responsive navbar-brand image CSS
 - Remove navbar-brand padding for firefox bug workaround
 - add 100% height and width auto ... similar to how bootstrap img-responsive class works
@@ -165,33 +151,3 @@ line height is 20px by default so add 30px top and bottom to equal the new .navb
 body {
   font-family: "Lato";
 }
-</style>
-</head>
-<body>
-<nav class="uk-navbar-container uk-navbar-transparent uk-navbar" uk-navbar>
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">Active</a></li>
-                    <li><a href="#">Item</a></li>
-                    <li>
-                        <a href="#">Parent</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-active"><a href="#">Active</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li class="uk-nav-header">Header</li>
-                                <li><a href="#">Item</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#">Item</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-{% block content %}
-    <h1>This is Base Content</h1>
-{% endblock %}
-</body>
-</html>
