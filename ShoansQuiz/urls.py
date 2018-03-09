@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from register import views
-from ShoansQuiz import views as views_main
+from ShoansQuiz import views as views
 from django.contrib.auth.views import login,logout
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views_main.home,name='home'),
+    url(r'^$', views.home,name='home'),
     url(r'^accounts/logout/$', logout),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^login/$',views.LoginView.as_view(),name='login'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+
