@@ -7,6 +7,18 @@
     {% endblock %}
 </head>
 <body>
+
+{% if user.is_authenticated %}
+    <h1>{{ user.email }}
+         {{ socialaccunts.extradata.email }}
+
+    {{ user.first_name }} {{ request.user.last_name }}
+
+    </h1>
+{% else %}
+    <h2>NOT Auth</h2>
+{% endif %}
+
 {% block content %}
     <h1>This is Base Content</h1>
 {% endblock %}
