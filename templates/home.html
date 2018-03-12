@@ -1,33 +1,75 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block head %}
-<title>Home</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+.trPic{
+		width:1700px;
+		height:1000px;
+		background: url(/media/shoans.png) no-repeat;
+	}
+	.trPic .redO{
+		{#position:relative;#}
+		width:2000px;
+		height:8000px;
+		background: #304c6d;
+		opacity:0.7;
+	}
+.lay {
+  -webkit-animation: background 1s cubic-bezier(1,0,0,1) infinite;
+  animation: background 50s cubic-bezier(1,0,0,1) infinite;
+}
 
-{% endblock %}
+@-webkit-keyframes background {
+  0% { background-color: #f99; opacity:0.7;}
+  33% { background-color: #9f9; opacity:0.7;}
+  67% { background-color: #99f; opacity:0.7;}
+  100% { background-color: #f99; opacity:0.7;}
+}
 
-{% block content %}
-<div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="animation: push">
+@keyframes background {
+  0% { background-color: #f99; opacity:0.7;}
+  33% { background-color: #9f9; opacity:0.7;}
+  67% { background-color: #99f; opacity:0.7;}
+  100% { background-color: #f99; opacity:0.7;}
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
 
-	 <div uk-slideshow="autoplay: true">
-	 <div uk-slideshow="ratio: 7:3">
-   <ul class="uk-slideshow-items">
+    <div class="trPic uk-text-center">
+      <div class="uk-cover-background uk-inline-clip uk-transition-toggle redO lay" tabindex="0" style="height:1000px ">
+{#           <img class="uk-transition-scale-up uk-transition-opaque" src="/media/shoans.png" alt="" >#}
+          <div class="uk-position-center">
+                <div class="uk-transition-slide-top-small"><h1 class="uk-margin-remove">Nice to see you here</h1></div>
+                <div class="uk-transition-slide-bottom-small"><h1 class="uk-margin-remove">Let do quiz</h1></div>
+            </div>
+
+      </div>
+        <div class="uk-position-top">
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+                <div class="uk-navbar-center">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Discussion</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+  <!-- <div style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 50% 50%; background-image: none;">
+    <img src="shoans.png" alt="">
+    </div> -->
 
 
-           <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right" style="height: 600px">
-
-			   <img src="/media/everyone%20else%20is%20already%20taken.png" alt="" uk-cover>
-
-
-           </div>
-
-
-   </ul>
-</div>
-</div>
-   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-   <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
-</div>
-
-
-{% endblock %}
+  </body>
+</html>

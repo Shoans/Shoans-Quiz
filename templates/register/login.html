@@ -1,41 +1,42 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-  <head>
+  {% block head %}
     <meta charset="utf-8">
     <title>Signin</title>
 
 {#      <link rel="stylesheet" type="text/css" href="{% static 'css/login_fb_google.css' %}">#}
       <link rel="stylesheet" type="text/css" href="{% static 'css/login_fb_google.css' %}" >
-      <script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js"></script>
       <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
       <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
-      <link href="{% static 'assets/css/docs.css' %}" rel="stylesheet" type="text/css">
+{#      <link href="{% static 'assets/css/docs.css' %}" rel="stylesheet" type="text/css">#}
       <link href="{% static 'css/bootstarp-social.css' %}" rel="stylesheet" type="text/css">
 
-  </head>
-  <body>
+  {% endblock %}
+  {% block content %}
 {#    <ul>#}
 {#      <li><button type="button"><a title="Facebook" class="socialaccount_provider facebook" href="/accounts/facebook/login/?process=login">Facebook</a></button></li>#}
 {#      <li><a title="Google" class="socialaccount_provider google" href="/accounts/google/login/?process=login">Google</a></li>#}
 {#    </ul>#}
 {##}
 
-
-
-  <a title="Facebook" class="socialaccount_provider facebook btn btn-block btn-social btn-facebook" href="/accounts/facebook/login/?process=login" style="width: 300px">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding pull-center text-right" style="margin-top: 100px;margin-left: 50px;">
+<a title="Facebook" class="socialaccount_provider facebook btn btn-block btn-social btn-facebook" href="/accounts/facebook/login/?process=login" style="width: 300px ; ">
       <span class="fa fa-facebook"></span>Login with Facebook
-  </a>
-
-
-    <a title="Google" class="socialaccount_provider google btn btn-block btn-social btn-google" href="/accounts/google/login/?process=login"  style="width: 300px">
+</a>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding pull-center text-right" style="margin-top: 100px;margin-left: 50px;">
+      <a title="Google" class="socialaccount_provider google btn btn-block btn-social btn-google" href="/accounts/google/login/?process=login"  style="width: 300px ; ">
         <span class="fa fa-google"></span>
   Login with Google
     </a>
+</div>
+
+
+
 <script id="allauth-facebook-settings" type="application/json">
     {"appId": "364235564056120", "version": "v2.4", "locale": "en_US", "initParams": {"appId": "364235564056120", "version": "v2.4"}, "loginOptions": {"scope": ""}, "loginByTokenUrl": "http://localhost:8000/accounts/facebook/login/token/", "cancelUrl": "http://localhost:8000/accounts/social/login/cancelled/", "logoutUrl": "http://localhost:8000/accounts/logout/", "loginUrl": "http://localhost:8000/accounts/facebook/login/", "errorUrl": "http://localhost:8000/accounts/social/login/error/", "csrfToken": "DfbMOidI8idK3f10doQ3oKek9IntJfxPVfywZlCbcewhn8YYrMWq33f2raX44SUP"}
     </script>
 
 <script type="text/javascript" src="/static/facebook/js/fbconnect.js"></script>
-  </body>
-</html>
+      <script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js"></script>
+  {% endblock %}
