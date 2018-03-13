@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/login_fb_google.css' %}" >
+      <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+{#      <link href="{% static 'assets/css/docs.css' %}" rel="stylesheet" type="text/css">#}
+      <link href="{% static 'css/bootstarp-social.css' %}" rel="stylesheet" type="text/css">
     <style>
 .trPic{
 		width:1700px;
@@ -34,6 +39,7 @@
   67% { background-color: #99f; opacity:0.7;}
   100% { background-color: #f99; opacity:0.7;}
 }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
@@ -55,11 +61,10 @@
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
                         <li class="uk-active"><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="#login">Login</a></li>
                         <li><a href="#">Quiz</a></li>
                         <li><a href="#">Team</a></li>
                         <li><a href="#">Discussion</a></li>
-
                     </ul>
                 </div>
             </nav>
@@ -70,6 +75,30 @@
     <img src="shoans.png" alt="">
     </div> -->
 
+ <div id="login">
+
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding pull-center text-right" style="margin-top: 100px;margin-left: 20%;">
+<a title="Facebook" class="socialaccount_provider facebook btn btn-block btn-social btn-facebook" href="/accounts/facebook/login/?process=login" style="width: 300px  ">
+      <span class="fa fa-facebook"></span>Login with Facebook
+</a>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding pull-center text-right" style="margin-top: 100px;margin-left: 50px;">
+      <a title="Google" class="socialaccount_provider google btn btn-block btn-social btn-google" href="/accounts/google/login/?process=login"  style="width: 300px ; ">
+        <span class="fa fa-google"></span>
+  Login with Google
+    </a>
+</div>
+
+
+
+<script id="allauth-facebook-settings" type="application/json">
+    {"appId": "364235564056120", "version": "v2.4", "locale": "en_US", "initParams": {"appId": "364235564056120", "version": "v2.4"}, "loginOptions": {"scope": ""}, "loginByTokenUrl": "http://localhost:8000/accounts/facebook/login/token/", "cancelUrl": "http://localhost:8000/accounts/social/login/cancelled/", "logoutUrl": "http://localhost:8000/accounts/logout/", "loginUrl": "http://localhost:8000/accounts/facebook/login/", "errorUrl": "http://localhost:8000/accounts/social/login/error/", "csrfToken": "DfbMOidI8idK3f10doQ3oKek9IntJfxPVfywZlCbcewhn8YYrMWq33f2raX44SUP"}
+    </script>
+
+<script type="text/javascript" src="/static/facebook/js/fbconnect.js"></script>
+      <script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js"></script>
+ </div>
 
   </body>
 </html>
