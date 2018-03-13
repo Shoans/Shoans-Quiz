@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
                   url(r'^admin/', admin.site.urls),
                   url(r'^$', views.home, name='home'),
-                  url(r'^accounts/logout/$', logout),
-                  url(r'^accounts/login/$', views.login, name='login'),
+                  url(r'^accounts/logout/$', logout,name='logout'),
+                  url(r'^accounts/login/$', views.login, name='login_redirect'),
                   url(r'^accounts/', include('allauth.urls')),
                   url(r'^login/$', views.LoginView.as_view(), name='login'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

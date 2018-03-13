@@ -54,11 +54,15 @@
             <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
                 <div class="uk-navbar-center">
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="#">Quiz</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Discussion</a></li>
+                        <li ><a href="{% url 'home' %}" style="font-size: 30px;margin-right: 20px">Home</a></li>
+                        {% if not user.is_authenciated %}
+                        <li><a href="{% url 'login' %}" style="font-size: 30px;margin-right: 20px">Login</a></li>
+                            {% else %}
+                            <li><a href="{% url 'logout' %}" style="font-size: 30px;margin-right: 20px">Logout</a></li>
+                        {% endif %}
+                        <li><a href="#" style="font-size: 30px;margin-right: 20px">Quiz</a></li>
+                        <li><a href="#" style="font-size: 30px;margin-right: 20px">Team</a></li>
+                        <li><a href="#" style="font-size: 30px">Discussion</a></li>
 
                     </ul>
                 </div>
